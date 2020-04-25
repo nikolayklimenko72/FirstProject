@@ -7,7 +7,7 @@
             <DockPanel LastChildFill="False">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Background="#830074FF">
                 <Button Content="Контакты" Margin="20, 5, 20, 0" ToolTip="Отобразить список контактов" Click="ShowContacts"></Button>
-                <Button Content="Звонки" Margin="20, 5, 20, 0" RenderTransformOrigin="0.5,0.5" Opacity="0.99">
+                <Button Content="Звонки" Margin="20, 5, 20, 0" RenderTransformOrigin="0.5,0.5" Opacity="0.99" Click="ShowCalls">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                             <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -26,7 +26,8 @@
                     </Button.RenderTransform>
                 </Button>
                 <Button Content="Чаты" Margin="20, 5, 20, 0" Click="ShowChat"></Button>
-                <Button Content="Настройки" Margin="20, 5, 20 ,0"></Button>
+                <Button Content="Настройки" Margin="20, 5, 20 ,0" Click="ShowSettings"></Button>
+                
                 
             </StackPanel>
             
@@ -45,6 +46,13 @@
                 <TextBlock Text="Контакты"></TextBlock>
             </Grid>
 
+            <Grid Visibility="Collapsed" Name="Calls">
+                <TextBlock Text="Звонки"></TextBlock>
+            </Grid>
+
+            <Grid Visibility="Collapsed" Name="Settings">
+                <TextBlock Text="Настройки"></TextBlock>
+            </Grid>
         </DockPanel>
 
 

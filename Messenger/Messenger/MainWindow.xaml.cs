@@ -27,14 +27,32 @@ namespace Messenger
 
         private void ShowContacts(object sender, RoutedEventArgs e)
         {
-            Chat.Visibility = System.Windows.Visibility.Collapsed;
+            CollapseAll();
             Contacts.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void ShowChat(object sender, RoutedEventArgs e)
         {
+            CollapseAll();
             Chat.Visibility = System.Windows.Visibility.Visible;
-            Contacts.Visibility = System.Windows.Visibility.Collapsed;
         }
+        private void ShowCalls(object sender, RoutedEventArgs e)
+        {
+            CollapseAll();
+            Calls.Visibility = System.Windows.Visibility.Visible;
+         }
+        private void ShowSettings(object sender, RoutedEventArgs e)
+        {
+            CollapseAll();
+            Settings.Visibility = System.Windows.Visibility.Visible;
+        }
+        private void CollapseAll()
+        {
+            Chat.Visibility = System.Windows.Visibility.Collapsed;
+            Contacts.Visibility = System.Windows.Visibility.Collapsed;
+            Settings.Visibility = System.Windows.Visibility.Collapsed;
+            Calls.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
     }
 }
