@@ -21,14 +21,41 @@ namespace Notes
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        int LastNoteNumber = 0;   
+        public MainWindow()  
         {
             InitializeComponent();
+            string s = File.ReadAllText("..\\..\\Number.txt");
+            LastNoteNumber = int.Parse(s);
+            int i;
+            for (i = 0; i <= LastNoteNumber; i++)
+            {
+                
+                s = File.ReadAllText("Note" + i.ToString() + ".txt");
+                NoteList.Items.Add(s);
+            }
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            File.WriteAllText("Note.txt", Note.Text);
+          // Мы увеличиваем номер последней заметки на 1. Сохраняем файл Note{номер заметки}.txt
+          // Сохраняем обновленный последний номер заметки.
+            LastNoteNumber = LastNoteNumber + 1;
+            File.WriteAllText("Note" + LastNoteNumber.ToString() + ".txt", Note.Text);
+            File.WriteAllText("..\\..\\Number.txt", LastNoteNumber.ToString());
+            NoteList.Items.Add(Note.Text);
+           MessageBox.Show("Заметка сохранена");
+            
+
         }
+
+        private void NoteList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Note.Text = ((string)NoteList.SelectedItem);
+        }
+
+      
+        
     }
 }
