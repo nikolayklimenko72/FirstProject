@@ -9,7 +9,8 @@
                 <TextBox DockPanel.Dock="Bottom" Width="300" Height="72" Name="Note"></TextBox>
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Height="24" Width="59" Click="Button_Click_1">Создать</Button>
-                <Button Height="24" Width="59" Margin="10">Удалить</Button>
+                <Button Height="24" Width="59" Margin="10" Name="btnDelete" Click="btnDelete_Click_1">Удалить</Button>
+                <Button  Height="24" Width="70" Name="btnSave" Click="btnSave_Click" Visibility="Collapsed" >Сохранить</Button>
             </StackPanel>
             <ListBox DockPanel.Dock="Top" Name="NoteList" MouseDoubleClick="NoteList_MouseDoubleClick">
                 <ListBox.ItemContainerStyle>

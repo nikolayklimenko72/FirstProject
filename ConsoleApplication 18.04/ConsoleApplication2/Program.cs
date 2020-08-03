@@ -10,14 +10,14 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
-            int i; int summa = 0; int n = 10;
-            for (i = 1; i <= n; i++)
+            string[] s;
+            s 
+            for (int i = 0; i < 5; i++)
             {
-                summa = summa + i;
-                Console.WriteLine(i);
+                Console.WriteLine("Hello World");
             }
-            Console.Write("summa:");
-            Console.WriteLine(summa); 
+            
+            
             Console.ReadKey();
         }
         
