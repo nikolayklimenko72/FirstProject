@@ -12,7 +12,7 @@
                 <Button Height="24" Width="59" Margin="10" Name="btnDelete" Click="btnDelete_Click_1">Удалить</Button>
                 <Button  Height="24" Width="70" Name="btnSave" Click="btnSave_Click" Visibility="Collapsed" >Сохранить</Button>
             </StackPanel>
-            <ListBox DockPanel.Dock="Top" Name="NoteList" MouseDoubleClick="NoteList_MouseDoubleClick">
+            <ListBox DockPanel.Dock="Top" Name="NoteList" MouseDoubleClick="NoteList_MouseDoubleClick" SelectionChanged="NoteList_SelectionChanged_1" >
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="ListBoxItem.Background" Value="#FFB0C4DE"/>

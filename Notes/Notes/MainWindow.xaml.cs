@@ -39,13 +39,15 @@ namespace Notes
             NoteList.Items.Clear(); // Удаляет все элементы списка.
             int poz = 0;
 
-            
+            string currentFile;
+
             for (i = 0; i <= LastNoteNumber; i++)
             {
-                if (File.Exists("Note" + i.ToString() + ".txt"))
+                currentFile = "Note" + i.ToString() + ".txt";
+                if (File.Exists(currentFile))
                 {
-                    s = File.ReadAllText("Note" + i.ToString() + ".txt");
-                    files[poz] = "Note" + i.ToString() + ".txt";
+                    s = File.ReadAllText(currentFile);
+                    files[poz] = currentFile;
                     NoteList.Items.Add(s);
                     poz = poz + 1;
                     
@@ -95,6 +97,11 @@ namespace Notes
                 File.Delete(files[number]);
             }
            
+        }
+
+        private void NoteList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            Note.Text = "Был выбран другой элемент списка";
         }
 
       
