@@ -16,6 +16,12 @@ using System.IO;
 
 namespace Notes
 {
+    class Note
+    {
+        public string Title;
+        public string Text;
+        public string DateCreation;
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -58,16 +64,16 @@ namespace Notes
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-          // Мы увеличиваем номер последней заметки на 1. Сохраняем файл Note{номер заметки}.txt
-          // Сохраняем обновленный последний номер заметки.
+            NameNotes NewNote = new NameNotes();
+            NewNote.ShowDialog();
+            // Мы увеличиваем номер последней заметки на 1. Сохраняем файл Note{номер заметки}.txt
+          // Сохраняем обновленный последний номер заметки. 
             LastNoteNumber = LastNoteNumber + 1;
-            File.WriteAllText("Note" + LastNoteNumber.ToString() + ".txt", Note.Text);
+            File.WriteAllText("Note" + LastNoteNumber.ToString() + ".txt", NewNote.NoteText + "\n" + Note.Text);
             File.WriteAllText("..\\..\\Number.txt", LastNoteNumber.ToString());
             NoteList.Items.Add(Note.Text);
            MessageBox.Show("Заметка сохранена");
            ReadNotes();
-            
-
         }
 
         private void NoteList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
