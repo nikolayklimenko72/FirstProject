@@ -34,6 +34,7 @@ namespace Notes
         {
             InitializeComponent();
             ReadNotes();
+            ReadNote("Note21.txt");
             
         }
         void ReadNotes()
@@ -110,7 +111,13 @@ namespace Notes
             Note.Text = "Был выбран другой элемент списка";
         }
 
-      
+        private void ReadNote(string filename)
+        {
+            // название заметки - 1 строка в файле
+            // все последующие строки - текст заметки
+            string[] Data;
+            Data = File.ReadAllLines(filename);
+        }
         
     }
 }
